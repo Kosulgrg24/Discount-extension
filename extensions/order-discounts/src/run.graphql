@@ -1,5 +1,12 @@
 query RunInput {
   cart {
+    buyerIdentity {
+      customer {
+        vipTag: hasAnyTag(tags: ["VIP"])
+        loyalTag: hasAnyTag(tags: ["Loyal"])
+        newTag: hasAnyTag(tags: ["New"])
+      }
+    }
     lines {
       quantity
       cost {
